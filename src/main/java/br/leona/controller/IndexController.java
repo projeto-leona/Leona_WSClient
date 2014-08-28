@@ -9,15 +9,14 @@ package br.leona.controller;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
-import javax.xml.ws.WebServiceRef;
+///import javax.xml.ws.WebServiceRef;
 
 /**
  *
  * @author Jean Negrão
  */
 @Resource
-public class IndexController {  
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/Leona_Station/ControllerServicos.wsdl")
+public class IndexController {
   
     private Result result;
     
