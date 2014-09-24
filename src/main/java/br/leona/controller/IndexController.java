@@ -31,7 +31,7 @@ public class IndexController {
                 .forwardTo("index.jsp");
         
     }    
-         
+       
     private static java.util.List<br.leona.station.controller.Servico> GetListaServicos() {        
         br.leona.station.controller.ControllerServicos_Service service = new br.leona.station.controller.ControllerServicos_Service();
         br.leona.station.controller.ControllerServicos port = service.getControllerServicosPort();
