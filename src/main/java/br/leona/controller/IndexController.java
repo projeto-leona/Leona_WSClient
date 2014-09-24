@@ -16,8 +16,7 @@ import br.com.caelum.vraptor.Result;
  * @author Jean Negrão
  */
 @Resource
-public class IndexController {
-  
+public class IndexController {  
     private Result result;
     
     public IndexController(Result result){
@@ -26,20 +25,17 @@ public class IndexController {
     
     @Path("/")
     @SuppressWarnings("empty-statement")
-    public void index(){   
-        
+    public void index(){           
         result                 
                 .include("listService", GetListaServicos())
                 .forwardTo("index.jsp");
         
     }    
          
-    private static java.util.List<br.leona.station.controller.Servico> GetListaServicos() {
-        
+    private static java.util.List<br.leona.station.controller.Servico> GetListaServicos() {        
         br.leona.station.controller.ControllerServicos_Service service = new br.leona.station.controller.ControllerServicos_Service();
         br.leona.station.controller.ControllerServicos port = service.getControllerServicosPort();
-        return port.getListaServicos();
-            
+        return port.getListaServicos();            
     }
 
 }
