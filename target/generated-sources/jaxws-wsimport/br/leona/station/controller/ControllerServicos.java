@@ -1,15 +1,14 @@
 
 package br.leona.station.controller;
 
-import java.util.List;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import javax.jws.WebResult;
-import javax.jws.WebService;
-import javax.xml.bind.annotation.XmlSeeAlso;
-import javax.xml.ws.Action;
-import javax.xml.ws.RequestWrapper;
-import javax.xml.ws.ResponseWrapper;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.xml.namespace.QName;
+import javax.xml.ws.Service;
+import javax.xml.ws.WebEndpoint;
+import javax.xml.ws.WebServiceClient;
+import javax.xml.ws.WebServiceException;
+import javax.xml.ws.WebServiceFeature;
 
 
 /**
@@ -18,35 +17,78 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "ControllerServicos", targetNamespace = "http://controller.station.leona.br/")
-@XmlSeeAlso({
-    ObjectFactory.class
-})
-public interface ControllerServicos {
+@WebServiceClient(name = "ControllerServicos", targetNamespace = "http://controller.station.leona.br/", wsdlLocation = "http://localhost:8080/Leona_Station/ControllerServicos?wsdl")
+public class ControllerServicos
+    extends Service
+{
 
+    private final static URL CONTROLLERSERVICOS_WSDL_LOCATION;
+    private final static WebServiceException CONTROLLERSERVICOS_EXCEPTION;
+    private final static QName CONTROLLERSERVICOS_QNAME = new QName("http://controller.station.leona.br/", "ControllerServicos");
+
+    static {
+        URL url = null;
+        WebServiceException e = null;
+        try {
+            url = new URL("http://localhost:8080/Leona_Station/ControllerServicos?wsdl");
+        } catch (MalformedURLException ex) {
+            e = new WebServiceException(ex);
+        }
+        CONTROLLERSERVICOS_WSDL_LOCATION = url;
+        CONTROLLERSERVICOS_EXCEPTION = e;
+    }
+
+    public ControllerServicos() {
+        super(__getWsdlLocation(), CONTROLLERSERVICOS_QNAME);
+    }
+
+    public ControllerServicos(WebServiceFeature... features) {
+        super(__getWsdlLocation(), CONTROLLERSERVICOS_QNAME, features);
+    }
+
+    public ControllerServicos(URL wsdlLocation) {
+        super(wsdlLocation, CONTROLLERSERVICOS_QNAME);
+    }
+
+    public ControllerServicos(URL wsdlLocation, WebServiceFeature... features) {
+        super(wsdlLocation, CONTROLLERSERVICOS_QNAME, features);
+    }
+
+    public ControllerServicos(URL wsdlLocation, QName serviceName) {
+        super(wsdlLocation, serviceName);
+    }
+
+    public ControllerServicos(URL wsdlLocation, QName serviceName, WebServiceFeature... features) {
+        super(wsdlLocation, serviceName, features);
+    }
 
     /**
      * 
      * @return
-     *     returns java.util.List<br.leona.station.controller.Servico>
+     *     returns ControladorServicos
      */
-    @WebMethod(operationName = "GetListaServicos")
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "GetListaServicos", targetNamespace = "http://controller.station.leona.br/", className = "br.leona.station.controller.GetListaServicos")
-    @ResponseWrapper(localName = "GetListaServicosResponse", targetNamespace = "http://controller.station.leona.br/", className = "br.leona.station.controller.GetListaServicosResponse")
-    @Action(input = "http://controller.station.leona.br/ControllerServicos/GetListaServicosRequest", output = "http://controller.station.leona.br/ControllerServicos/GetListaServicosResponse")
-    public List<Servico> getListaServicos();
+    @WebEndpoint(name = "ControladorServicosPort")
+    public ControladorServicos getControladorServicosPort() {
+        return super.getPort(new QName("http://controller.station.leona.br/", "ControladorServicosPort"), ControladorServicos.class);
+    }
 
     /**
      * 
-     * @param listaServicos
+     * @param features
+     *     A list of {@link javax.xml.ws.WebServiceFeature} to configure on the proxy.  Supported features not in the <code>features</code> parameter will have their default values.
+     * @return
+     *     returns ControladorServicos
      */
-    @WebMethod(operationName = "SetListaServicos")
-    @RequestWrapper(localName = "SetListaServicos", targetNamespace = "http://controller.station.leona.br/", className = "br.leona.station.controller.SetListaServicos")
-    @ResponseWrapper(localName = "SetListaServicosResponse", targetNamespace = "http://controller.station.leona.br/", className = "br.leona.station.controller.SetListaServicosResponse")
-    @Action(input = "http://controller.station.leona.br/ControllerServicos/SetListaServicosRequest", output = "http://controller.station.leona.br/ControllerServicos/SetListaServicosResponse")
-    public void setListaServicos(
-        @WebParam(name = "listaServicos", targetNamespace = "")
-        List<Servico> listaServicos);
+    @WebEndpoint(name = "ControladorServicosPort")
+    public ControladorServicos getControladorServicosPort(WebServiceFeature... features) {
+        return super.getPort(new QName("http://controller.station.leona.br/", "ControladorServicosPort"), ControladorServicos.class, features);
+    }
+
+    private static URL __getWsdlLocation() {
+        if (CONTROLLERSERVICOS_EXCEPTION!= null) {
+            throw CONTROLLERSERVICOS_EXCEPTION;
+        }
+        return CONTROLLERSERVICOS_WSDL_LOCATION;
+    }
 
 }

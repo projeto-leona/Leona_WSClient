@@ -10,23 +10,53 @@
 <message name="GetListaServicosResponse">
 <part name="parameters" element="tns:GetListaServicosResponse"/>
 </message>
+<message name="isLigado">
+<part name="parameters" element="tns:isLigado"/>
+</message>
+<message name="isLigadoResponse">
+<part name="parameters" element="tns:isLigadoResponse"/>
+</message>
 <message name="SetListaServicos">
 <part name="parameters" element="tns:SetListaServicos"/>
 </message>
 <message name="SetListaServicosResponse">
 <part name="parameters" element="tns:SetListaServicosResponse"/>
 </message>
-<portType name="ControllerServicos">
+<message name="SetLigaDesliga">
+<part name="parameters" element="tns:SetLigaDesliga"/>
+</message>
+<message name="SetLigaDesligaResponse">
+<part name="parameters" element="tns:SetLigaDesligaResponse"/>
+</message>
+<message name="SetDirecao">
+<part name="parameters" element="tns:SetDirecao"/>
+</message>
+<message name="SetDirecaoResponse">
+<part name="parameters" element="tns:SetDirecaoResponse"/>
+</message>
+<portType name="ControladorServicos">
 <operation name="GetListaServicos">
-<input wsam:Action="http://controller.station.leona.br/ControllerServicos/GetListaServicosRequest" message="tns:GetListaServicos"/>
-<output wsam:Action="http://controller.station.leona.br/ControllerServicos/GetListaServicosResponse" message="tns:GetListaServicosResponse"/>
+<input wsam:Action="http://controller.station.leona.br/ControladorServicos/GetListaServicosRequest" message="tns:GetListaServicos"/>
+<output wsam:Action="http://controller.station.leona.br/ControladorServicos/GetListaServicosResponse" message="tns:GetListaServicosResponse"/>
+</operation>
+<operation name="isLigado">
+<input wsam:Action="http://controller.station.leona.br/ControladorServicos/isLigadoRequest" message="tns:isLigado"/>
+<output wsam:Action="http://controller.station.leona.br/ControladorServicos/isLigadoResponse" message="tns:isLigadoResponse"/>
 </operation>
 <operation name="SetListaServicos">
-<input wsam:Action="http://controller.station.leona.br/ControllerServicos/SetListaServicosRequest" message="tns:SetListaServicos"/>
-<output wsam:Action="http://controller.station.leona.br/ControllerServicos/SetListaServicosResponse" message="tns:SetListaServicosResponse"/>
+<input wsam:Action="http://controller.station.leona.br/ControladorServicos/SetListaServicosRequest" message="tns:SetListaServicos"/>
+<output wsam:Action="http://controller.station.leona.br/ControladorServicos/SetListaServicosResponse" message="tns:SetListaServicosResponse"/>
+</operation>
+<operation name="SetLigaDesliga">
+<input wsam:Action="http://controller.station.leona.br/ControladorServicos/SetLigaDesligaRequest" message="tns:SetLigaDesliga"/>
+<output wsam:Action="http://controller.station.leona.br/ControladorServicos/SetLigaDesligaResponse" message="tns:SetLigaDesligaResponse"/>
+</operation>
+<operation name="SetDirecao">
+<input wsam:Action="http://controller.station.leona.br/ControladorServicos/SetDirecaoRequest" message="tns:SetDirecao"/>
+<output wsam:Action="http://controller.station.leona.br/ControladorServicos/SetDirecaoResponse" message="tns:SetDirecaoResponse"/>
 </operation>
 </portType>
-<binding name="ControllerServicosPortBinding" type="tns:ControllerServicos">
+<binding name="ControladorServicosPortBinding" type="tns:ControladorServicos">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="GetListaServicos">
 <soap:operation soapAction=""/>
@@ -37,7 +67,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<operation name="isLigado">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="SetListaServicos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="SetLigaDesliga">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="SetDirecao">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -48,7 +105,7 @@
 </operation>
 </binding>
 <service name="ControllerServicos">
-<port name="ControllerServicosPort" binding="tns:ControllerServicosPortBinding">
+<port name="ControladorServicosPort" binding="tns:ControladorServicosPortBinding">
 <soap:address location="http://localhost:8080/Leona_Station/ControllerServicos"/>
 </port>
 </service>

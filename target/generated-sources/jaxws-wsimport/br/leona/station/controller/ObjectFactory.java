@@ -24,9 +24,15 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _SetDirecao_QNAME = new QName("http://controller.station.leona.br/", "SetDirecao");
+    private final static QName _SetLigaDesliga_QNAME = new QName("http://controller.station.leona.br/", "SetLigaDesliga");
+    private final static QName _IsLigado_QNAME = new QName("http://controller.station.leona.br/", "isLigado");
     private final static QName _SetListaServicos_QNAME = new QName("http://controller.station.leona.br/", "SetListaServicos");
+    private final static QName _IsLigadoResponse_QNAME = new QName("http://controller.station.leona.br/", "isLigadoResponse");
+    private final static QName _SetLigaDesligaResponse_QNAME = new QName("http://controller.station.leona.br/", "SetLigaDesligaResponse");
     private final static QName _GetListaServicosResponse_QNAME = new QName("http://controller.station.leona.br/", "GetListaServicosResponse");
     private final static QName _GetListaServicos_QNAME = new QName("http://controller.station.leona.br/", "GetListaServicos");
+    private final static QName _SetDirecaoResponse_QNAME = new QName("http://controller.station.leona.br/", "SetDirecaoResponse");
     private final static QName _SetListaServicosResponse_QNAME = new QName("http://controller.station.leona.br/", "SetListaServicosResponse");
 
     /**
@@ -34,6 +40,14 @@ public class ObjectFactory {
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link IsLigadoResponse }
+     * 
+     */
+    public IsLigadoResponse createIsLigadoResponse() {
+        return new IsLigadoResponse();
     }
 
     /**
@@ -45,11 +59,51 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link SetLigaDesligaResponse }
+     * 
+     */
+    public SetLigaDesligaResponse createSetLigaDesligaResponse() {
+        return new SetLigaDesligaResponse();
+    }
+
+    /**
+     * Create an instance of {@link IsLigado }
+     * 
+     */
+    public IsLigado createIsLigado() {
+        return new IsLigado();
+    }
+
+    /**
+     * Create an instance of {@link SetLigaDesliga }
+     * 
+     */
+    public SetLigaDesliga createSetLigaDesliga() {
+        return new SetLigaDesliga();
+    }
+
+    /**
+     * Create an instance of {@link SetDirecao }
+     * 
+     */
+    public SetDirecao createSetDirecao() {
+        return new SetDirecao();
+    }
+
+    /**
      * Create an instance of {@link SetListaServicosResponse }
      * 
      */
     public SetListaServicosResponse createSetListaServicosResponse() {
         return new SetListaServicosResponse();
+    }
+
+    /**
+     * Create an instance of {@link SetDirecaoResponse }
+     * 
+     */
+    public SetDirecaoResponse createSetDirecaoResponse() {
+        return new SetDirecaoResponse();
     }
 
     /**
@@ -77,12 +131,57 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetDirecao }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://controller.station.leona.br/", name = "SetDirecao")
+    public JAXBElement<SetDirecao> createSetDirecao(SetDirecao value) {
+        return new JAXBElement<SetDirecao>(_SetDirecao_QNAME, SetDirecao.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetLigaDesliga }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://controller.station.leona.br/", name = "SetLigaDesliga")
+    public JAXBElement<SetLigaDesliga> createSetLigaDesliga(SetLigaDesliga value) {
+        return new JAXBElement<SetLigaDesliga>(_SetLigaDesliga_QNAME, SetLigaDesliga.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsLigado }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://controller.station.leona.br/", name = "isLigado")
+    public JAXBElement<IsLigado> createIsLigado(IsLigado value) {
+        return new JAXBElement<IsLigado>(_IsLigado_QNAME, IsLigado.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link SetListaServicos }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://controller.station.leona.br/", name = "SetListaServicos")
     public JAXBElement<SetListaServicos> createSetListaServicos(SetListaServicos value) {
         return new JAXBElement<SetListaServicos>(_SetListaServicos_QNAME, SetListaServicos.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link IsLigadoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://controller.station.leona.br/", name = "isLigadoResponse")
+    public JAXBElement<IsLigadoResponse> createIsLigadoResponse(IsLigadoResponse value) {
+        return new JAXBElement<IsLigadoResponse>(_IsLigadoResponse_QNAME, IsLigadoResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetLigaDesligaResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://controller.station.leona.br/", name = "SetLigaDesligaResponse")
+    public JAXBElement<SetLigaDesligaResponse> createSetLigaDesligaResponse(SetLigaDesligaResponse value) {
+        return new JAXBElement<SetLigaDesligaResponse>(_SetLigaDesligaResponse_QNAME, SetLigaDesligaResponse.class, null, value);
     }
 
     /**
@@ -101,6 +200,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://controller.station.leona.br/", name = "GetListaServicos")
     public JAXBElement<GetListaServicos> createGetListaServicos(GetListaServicos value) {
         return new JAXBElement<GetListaServicos>(_GetListaServicos_QNAME, GetListaServicos.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SetDirecaoResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://controller.station.leona.br/", name = "SetDirecaoResponse")
+    public JAXBElement<SetDirecaoResponse> createSetDirecaoResponse(SetDirecaoResponse value) {
+        return new JAXBElement<SetDirecaoResponse>(_SetDirecaoResponse_QNAME, SetDirecaoResponse.class, null, value);
     }
 
     /**

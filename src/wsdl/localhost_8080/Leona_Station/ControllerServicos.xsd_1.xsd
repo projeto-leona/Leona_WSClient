@@ -4,25 +4,51 @@
 
 <xs:element name="GetListaServicosResponse" type="tns:GetListaServicosResponse"/>
 
+<xs:element name="SetDirecao" type="tns:SetDirecao"/>
+
+<xs:element name="SetDirecaoResponse" type="tns:SetDirecaoResponse"/>
+
+<xs:element name="SetLigaDesliga" type="tns:SetLigaDesliga"/>
+
+<xs:element name="SetLigaDesligaResponse" type="tns:SetLigaDesligaResponse"/>
+
 <xs:element name="SetListaServicos" type="tns:SetListaServicos"/>
 
 <xs:element name="SetListaServicosResponse" type="tns:SetListaServicosResponse"/>
 
-<xs:complexType name="SetListaServicos">
-<xs:sequence>
-<xs:element name="listaServicos" type="tns:servico" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
+<xs:element name="isLigado" type="tns:isLigado"/>
 
-<xs:complexType name="servico">
-<xs:sequence>
-<xs:element name="nome" type="xs:string" minOccurs="0"/>
-<xs:element name="status" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
+<xs:element name="isLigadoResponse" type="tns:isLigadoResponse"/>
 
-<xs:complexType name="SetListaServicosResponse">
+<xs:complexType name="isLigado">
 <xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="isLigadoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetLigaDesliga">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="SetLigaDesligaResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="SetDirecao">
+<xs:sequence>
+<xs:element name="direcao" type="xs:string" minOccurs="0"/>
+<xs:element name="graus" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetDirecaoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="GetListaServicos">
@@ -33,5 +59,22 @@
 <xs:sequence>
 <xs:element name="return" type="tns:servico" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="servico">
+<xs:sequence>
+<xs:element name="nome" type="xs:string" minOccurs="0"/>
+<xs:element name="status" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetListaServicos">
+<xs:sequence>
+<xs:element name="listaServicos" type="tns:servico" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SetListaServicosResponse">
+<xs:sequence/>
 </xs:complexType>
 </xs:schema>
